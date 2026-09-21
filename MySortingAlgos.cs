@@ -6,12 +6,12 @@ using System.Text;
 
 namespace SortingAlgorithm
 {
-    public static class MySortingAlgos
+    public class MySortingAlgos
     {
       
 
         
-        public static ArrayList InsertionSort(ArrayList a)
+        public ArrayList InsertionSort(ArrayList a)
         {
             Stopwatch sw = new Stopwatch();
             Console.WriteLine("Insertion Sort");
@@ -32,10 +32,15 @@ namespace SortingAlgorithm
             sw.Stop();
             TimeSpan ts = sw.Elapsed;
             Console.WriteLine($"Sorting took {ts}.");
+            foreach (int nr in a)
+            {
+                Console.Write($"{nr} ");
+            }
+            Console.WriteLine();
             return a;
         }
 
-        public static ArrayList SelectionSort(ArrayList a)
+        public ArrayList SelectionSort(ArrayList a)
         {
             Stopwatch sw = new Stopwatch();
             Console.WriteLine("Selection Sort");
@@ -58,9 +63,14 @@ namespace SortingAlgorithm
             sw.Stop();
             TimeSpan ts = sw.Elapsed;
             Console.WriteLine($"Sorting took {ts}.");
+            foreach (int nr in a)
+            {
+                Console.Write($"{nr} ");
+            }
+            Console.WriteLine();
             return a;
         }
-        private static ArrayList merge(ArrayList left, ArrayList right)
+        private ArrayList merge(ArrayList left, ArrayList right)
         {
             ArrayList result = new ArrayList();
             while (left.Count > 0 && right.Count > 0)
@@ -91,7 +101,7 @@ namespace SortingAlgorithm
             return result;
         }
 
-        private static ArrayList MergeSort(ArrayList m)
+        private ArrayList MergeSort(ArrayList m)
         {
             if (m.Count <= 1)
             {
@@ -115,7 +125,7 @@ namespace SortingAlgorithm
             return merge(leftList, rightList);
         }
 
-        public static ArrayList MergeSortcall(ArrayList m)
+        public ArrayList MergeSortcall(ArrayList m)
          {
             Console.WriteLine("Merge Sort");
             Stopwatch sw = new Stopwatch();
@@ -124,6 +134,11 @@ namespace SortingAlgorithm
             sw.Stop();
             TimeSpan ts = sw.Elapsed;
             Console.WriteLine($"Sorting took {ts}.");
+            foreach (int a in m)
+            {
+                Console.Write($"{a} ");
+            }
+            Console.WriteLine();
             return sortedlist;
          }
 }
